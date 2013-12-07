@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AngularJsSeed</id>
+    <version>1.0.4</version>
+    <title>Angular.JS RC1 Seed</title>
+    <authors>jamey.wright</authors>
+    <owners>jamey.wright</owners>
+    <licenseUrl>https://github.com/angular/angular.js/blob/master/LICENSE</licenseUrl>
+    <projectUrl>http://angularjs.org/index.html</projectUrl>
+    <iconUrl>https://twimg0-a.akamaihd.net/profile_images/1143997916/ng-logo_reasonably_small.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs the Angular.js seed project (RC1) into an asp.net MVC project</description>
+    <releaseNotes>Bug fixes for package...</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>Javascript Framework Angular Knockout Backbone</tags>
+    <references>
+      <reference file="SeedWebsite.dll" />
+    </references>
+  </metadata>
+</package>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingdom.Client.Tests", "Pingdom.Client.Tests\Pingdom.Client.Tests.csproj", "{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pingdom.Client", "Pingdom.Client\Pingdom.Client.csproj", "{B36AFC49-C642-49FB-A49D-53504FC1170B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B36AFC49-C642-49FB-A49D-53504FC1170B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B36AFC49-C642-49FB-A49D-53504FC1170B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B36AFC49-C642-49FB-A49D-53504FC1170B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B36AFC49-C642-49FB-A49D-53504FC1170B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
