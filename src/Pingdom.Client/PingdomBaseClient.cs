@@ -17,18 +17,20 @@
 
         protected PingdomBaseClient(PingdomClientConfiguration configuration)
         {
-            var baseAddress = string.Format(configuration.BaseAddress, configuration.Version);
-
             var credentials = new CredentialCache
                 {
                     {
-                        new Uri(baseAddress), "basic", new NetworkCredential(configuration.UserName, configuration.Password)
+                        new Uri(configuration.BaseAddress), "basic", new NetworkCredential(configuration.UserName, configuration.Password)
                     }
                 };
 
             var requestHandler = new WebRequestHandler { Credentials = credentials };
 
-            _baseClient = new HttpClient(requestHandler) { BaseAddress = new Uri(baseAddress) };
+            _baseClient = new HttpClient(requestHandler)
+            {
+                BaseAddress = new Uri(configuration.BaseAddress)
+            };
+
             _baseClient.DefaultRequestHeaders.Add("app-key", configuration.AppKey);
         }
 

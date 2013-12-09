@@ -62,7 +62,6 @@
     <Compile Include="Resources\TraceRoute.cs" />
     <Compile Include="Pingdom.cs" />
     <Compile Include="PingdomBaseClient.cs" />
-    <Compile Include="JsonStringResult.cs" />
     <Compile Include="PingdomClient.cs" />
     <Compile Include="PingdomClientConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,10 +4,10 @@ using NUnit.Framework;
 
 namespace Pingdom.Client.Tests
 {
-    public class PingdomClientResourcesTests
+    public class PingdomClientResourcesTests_Checks
     {
         [Test]
-        public async Task GetChecksListTypeSafeTask()
+        public async Task GetChecksListTest()
         {
             var result = await Pingdom.Client.Checks.GetChecksList();
             Assert.IsTrue(result.Checks.Any());
@@ -16,10 +16,7 @@ namespace Pingdom.Client.Tests
         [Test]
         public async Task GetDetailedCheckInformationTest()
         {
-            const int checkId = 797046; //profileSystem
-
-            var result = await Pingdom.Client.Checks.GetDetailedCheckInformation(checkId);
-
+            var result = await Pingdom.Client.Checks.GetDetailedCheckInformation(797046); //profile-system
             Assert.IsTrue(result.Check.ContactIds.Any());
         }
 
