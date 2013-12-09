@@ -51,12 +51,14 @@
     <Compile Include="Contracts\GetDetailedCheckInformationResponse.cs" />
     <Compile Include="Contracts\PingdomError.cs" />
     <Compile Include="Contracts\PingdomResponse.cs" />
+    <Compile Include="Contracts\TraceRoute.cs" />
     <Compile Include="Resources\ActionsResource.cs" />
     <Compile Include="Resources\AnalysisResource.cs" />
     <Compile Include="Resources\ContactsResource.cs" />
     <Compile Include="Resources\ChecksResource.cs" />
-    <Compile Include="Resources\Probes.cs" />
-    <Compile Include="Resources\TraceRoute.cs" />
+    <Compile Include="Contracts\MakeTraceRouteResponse.cs" />
+    <Compile Include="Resources\ProbesResource.cs" />
+    <Compile Include="Resources\TraceRouteResource.cs" />
     <Compile Include="Pingdom.cs" />
     <Compile Include="PingdomBaseClient.cs" />
     <Compile Include="PingdomClient.cs" />

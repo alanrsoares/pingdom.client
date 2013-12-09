@@ -33,7 +33,7 @@ namespace Pingdom.Client.Resources
 
         public Task<PingdomResponse> DeleteCheck(int checkId)
         {
-            return Client.DeleteAsync<PingdomResponse>(string.Format("checks/{0}", checkId));
+            return Client.DeleteFormatAsync<PingdomResponse>("checks/{0}", checkId);
         }
 
         public async Task<PingdomResponse> DeleteMultipleChecks(IEnumerable<int> checkIds)

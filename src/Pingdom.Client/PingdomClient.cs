@@ -56,19 +56,19 @@ namespace Pingdom.Client
             }
         }
 
-        public Probes Probes
+        public ProbesResource Probes
         {
             get
             {
-                return new Probes();
+                return new ProbesResource();
             }
         }
 
-        public TraceRoute TraceRoute
+        public TraceRouteResource TraceRoute
         {
             get
             {
-                return new TraceRoute();
+                return new TraceRouteResource();
             }
         }
         #endregion
