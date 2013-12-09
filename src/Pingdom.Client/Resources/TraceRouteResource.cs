@@ -3,7 +3,7 @@ using Pingdom.Client.Contracts;
 
 namespace Pingdom.Client.Resources
 {
-    public sealed class TraceRouteResource : Resource
+    public class TraceRouteResource : Resource
     {
         public Task<MakeTraceRouteResponse> MakeTraceroute(string host, int probeId)
         {
