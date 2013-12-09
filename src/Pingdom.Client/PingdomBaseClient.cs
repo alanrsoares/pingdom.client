@@ -6,7 +6,6 @@
     using System.Net.Http;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using System.Web;
 
     public class PingdomBaseClient
     {
@@ -101,7 +100,7 @@
         {
             var properties = from propertyInfo in anonymousObject.GetType().GetProperties()
                              where propertyInfo.GetValue(anonymousObject, null) != null
-                             select new KeyValuePair<string, string>(propertyInfo.Name, HttpUtility.UrlEncode(propertyInfo.GetValue(anonymousObject, null).ToString()));
+                             select new KeyValuePair<string, string>(propertyInfo.Name, WebUtility.UrlEncode(propertyInfo.GetValue(anonymousObject, null).ToString()));
 
             return new FormUrlEncodedContent(properties);
         }
