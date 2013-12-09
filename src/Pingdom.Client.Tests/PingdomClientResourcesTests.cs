@@ -27,20 +27,20 @@ namespace Pingdom.Client.Tests
         public async Task FullCRUDTest()
         {
             //create
-            dynamic newCheck = new { name = "MyNewCheck-TEST-CREATE", type = "http", host = "www.my-test-host-check.com.br" };
+            var newCheck = new { name = "MyNewCheck-TEST-CREATE", type = "http", host = "www.my-test-host-check.com.br" };
             var createNewCheckResponse = await Pingdom.Client.Checks.CreateNewCheck(newCheck);
             Assert.IsNotNull(createNewCheckResponse);
             Assert.IsFalse(createNewCheckResponse.HasErrors);
             Assert.IsNotNull(createNewCheckResponse.Check);
 
             //retrieve
-            Contracts.GetDetailedCheckInformationResponse retrievedCheckResponse = await Pingdom.Client.Checks.GetDetailedCheckInformation(createNewCheckResponse.Check.Id);
+            var retrievedCheckResponse = await Pingdom.Client.Checks.GetDetailedCheckInformation(createNewCheckResponse.Check.Id);
             Assert.IsNotNull(retrievedCheckResponse);
             Assert.IsFalse(retrievedCheckResponse.HasErrors);
             Assert.IsNotNull(retrievedCheckResponse.Check);
 
             //update
-            dynamic checkUpdate = new { name = "MyNewCheck-TEST-UPDATE", host = "www.my-updated-test-host-check.com.br" };
+            var checkUpdate = new { name = "MyNewCheck-TEST-UPDATE", host = "www.my-updated-test-host-check.com.br" };
             var updateCheckResponse = await Pingdom.Client.Checks.ModifyCheck(retrievedCheckResponse.Check.Id, checkUpdate);
             Assert.IsNotNull(updateCheckResponse);
             Assert.IsFalse(updateCheckResponse.HasErrors);
@@ -64,6 +64,7 @@ namespace Pingdom.Client.Tests
             var createNewCheckResponse = await Pingdom.Client.Checks.CreateNewCheck(newCheck);
             Assert.IsNotNull(createNewCheckResponse);
             Assert.IsTrue(createNewCheckResponse.HasErrors);
+            Assert.IsNotNullOrEmpty(createNewCheckResponse.Message);
 
             ////retrieve
             //Contracts.GetDetailedCheckInformationResponse retrievedCheckResponse = await Pingdom.Client.Checks.GetDetailedCheckInformation(createNewCheckResponse.Check.Id);
