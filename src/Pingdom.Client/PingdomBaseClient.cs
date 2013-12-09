@@ -1,4 +1,6 @@
-﻿namespace Pingdom.Client
+﻿using Newtonsoft.Json;
+
+namespace Pingdom.Client
 {
     using System;
     using System.Linq;
@@ -11,7 +13,7 @@
     {
         private readonly HttpClient _baseClient;
 
-        public PingdomBaseClient()
+        protected PingdomBaseClient()
             : this(new PingdomClientConfiguration())
         { }
 
@@ -64,10 +66,10 @@
 
         public async Task<T> DeleteAsync<T>(string apiMethod)
         {
-            return await SendAsync<T>(apiMethod, null, HttpMethod.Delete);
+            return await DeleteAsync<T>(apiMethod, null);
         }
 
-        public async Task<T> DeleteAsync<T>(string apiMethodFormat, params object[] args)
+        public async Task<T> DeleteFormatAsync<T>(string apiMethodFormat, params object[] args)
         {
             var apiMethod = string.Format(apiMethodFormat, args);
             return await DeleteAsync<T>(apiMethod);
@@ -94,7 +96,8 @@
 
             using (var response = await sendAsyncTask)
             {
-                return await response.Content.ReadAsAsync<T>();
+                var stringResult = await response.Content.ReadAsStringAsync();
+                return await JsonConvert.DeserializeObjectAsync<T>(stringResult);
             }
         }
 
