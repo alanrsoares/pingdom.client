@@ -13,7 +13,7 @@ namespace Pingdom.Client.Resources
 
         public Task<GetDetailedCheckInformationResponse> GetDetailedCheckInformation(int checkId)
         {
-            return Client.GetAsync<GetDetailedCheckInformationResponse>("checks/{0}", checkId);
+            return Client.GetAsync<GetDetailedCheckInformationResponse>(string.Format("checks/{0}", checkId));
         }
 
         public Task<CreateNewCheckResponse> CreateNewCheck(object check)
@@ -33,7 +33,7 @@ namespace Pingdom.Client.Resources
 
         public Task<PingdomResponse> DeleteCheck(int checkId)
         {
-            return Client.DeleteFormatAsync<PingdomResponse>("checks/{0}", checkId);
+            return Client.DeleteAsync<PingdomResponse>(string.Format("checks/{0}", checkId));
         }
 
         public async Task<PingdomResponse> DeleteMultipleChecks(IEnumerable<int> checkIds)

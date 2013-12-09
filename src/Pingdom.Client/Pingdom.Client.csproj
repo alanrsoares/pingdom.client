@@ -57,6 +57,8 @@
     <Compile Include="Resources\ContactsResource.cs" />
     <Compile Include="Resources\ChecksResource.cs" />
     <Compile Include="Contracts\MakeTraceRouteResponse.cs" />
+    <Compile Include="Contracts\GetProbeServerListResponse.cs" />
+    <Compile Include="Contracts\Probe.cs" />
     <Compile Include="Resources\ProbesResource.cs" />
     <Compile Include="Resources\TraceRouteResource.cs" />
     <Compile Include="Pingdom.cs" />

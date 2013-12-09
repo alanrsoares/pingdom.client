@@ -48,12 +48,6 @@ namespace Pingdom.Client
             return await SendAsync<T>(apiMethod, null, HttpMethod.Get);
         }
 
-        public async Task<T> GetAsync<T>(string apiMethodFormat, params object[] args)
-        {
-            var apiMethod = string.Format(apiMethodFormat, args);
-            return await GetAsync<T>(apiMethod);
-        }
-
         public async Task<T> PostAsync<T>(string apiMethod, object data)
         {
             return await SendAsync<T>(apiMethod, data, HttpMethod.Post);
@@ -67,12 +61,6 @@ namespace Pingdom.Client
         public async Task<T> DeleteAsync<T>(string apiMethod)
         {
             return await DeleteAsync<T>(apiMethod, null);
-        }
-
-        public async Task<T> DeleteFormatAsync<T>(string apiMethodFormat, params object[] args)
-        {
-            var apiMethod = string.Format(apiMethodFormat, args);
-            return await DeleteAsync<T>(apiMethod);
         }
 
         public async Task<T> DeleteAsync<T>(string apiMethod, object data)

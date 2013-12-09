@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace Pingdom.Client.Contracts
+﻿namespace Pingdom.Client.Contracts
 {
-    public class GetAllProbesResponse : PingdomResponse
+    using System.Collections.Generic;
+
+    public class GetProbeServerListResponse : PingdomResponse
     {
         /// <summary>
         /// A List of Probes
