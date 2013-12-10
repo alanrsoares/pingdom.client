@@ -51,6 +51,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App.config.template" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

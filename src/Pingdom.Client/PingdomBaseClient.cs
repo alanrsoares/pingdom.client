@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.IO;
+using Newtonsoft.Json;
 
 namespace Pingdom.Client
 {
@@ -43,14 +44,14 @@ namespace Pingdom.Client
             return _baseClient.GetStringAsync(apiMethod);
         }
 
-        internal async Task<T> GetAsync<T>(string apiMethod)
+        internal Task<T> GetAsync<T>(string apiMethod)
         {
-            return await SendAsync<T>(apiMethod, null, HttpMethod.Get);
+            return SendAsync<T>(apiMethod, null, HttpMethod.Get);
         }
 
-        internal async Task<T> PostAsync<T>(string apiMethod, object data)
+        internal Task<T> PostAsync<T>(string apiMethod, object data)
         {
-            return await SendAsync<T>(apiMethod, data, HttpMethod.Post);
+            return SendAsync<T>(apiMethod, data, HttpMethod.Post);
         }
 
         internal Task<T> PutAsync<T>(string apiMethod, object data)
@@ -58,14 +59,14 @@ namespace Pingdom.Client
             return SendAsync<T>(apiMethod, data, HttpMethod.Put);
         }
 
-        internal async Task<T> DeleteAsync<T>(string apiMethod)
+        internal Task<T> DeleteAsync<T>(string apiMethod)
         {
-            return await DeleteAsync<T>(apiMethod, null);
+            return DeleteAsync<T>(apiMethod, null);
         }
 
-        internal async Task<T> DeleteAsync<T>(string apiMethod, object data)
+        internal Task<T> DeleteAsync<T>(string apiMethod, object data)
         {
-            return await SendAsync<T>(apiMethod, data, HttpMethod.Delete);
+            return SendAsync<T>(apiMethod, data, HttpMethod.Delete);
         }
 
         #endregion
@@ -76,16 +77,21 @@ namespace Pingdom.Client
         {
             var request = new HttpRequestMessage(httpMethod, apiMethod);
 
-            request.Headers.Add("Context-Type", "application/x-www-form-urlencoded");
-
-            if (data != null) request.Content = GetFormUrlEncodedContent(data);
+            if (data != null)
+            {
+                request.Headers.Add("Context-Type", "application/x-www-form-urlencoded");
+                request.Content = GetFormUrlEncodedContent(data);
+            }
 
             var sendAsyncTask = _baseClient.SendAsync(request);
 
             using (var response = await sendAsyncTask)
+            using (var content = response.Content)
+            using (var stream = await content.ReadAsStreamAsync())
+            using (var reader = new StreamReader(stream))
             {
-                var stringResult = await response.Content.ReadAsStringAsync();
-                return await JsonConvert.DeserializeObjectAsync<T>(stringResult);
+                var jsonString = await reader.ReadToEndAsync();
+                return await JsonConvert.DeserializeObjectAsync<T>(jsonString);
             }
         }
 
