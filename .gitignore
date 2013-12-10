@@ -180,4 +180,4 @@ Desktop.ini
 $RECYCLE.BIN/
 
 #Local App.Config File (Remote is still there
-*.config
+src/Pingdom.Client.Tests/App.config
