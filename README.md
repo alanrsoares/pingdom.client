@@ -4,6 +4,7 @@
 
 ### Avaliable resources:
 - Actions
+- Analysis
 - Checks
 - Contacts
 - Probes
