@@ -40,6 +40,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PingdomClientResourcesTests_Actions.cs" />
     <Compile Include="PingdomClientResourcesTests_Checks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
