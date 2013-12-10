@@ -2,8 +2,10 @@
 
 namespace Pingdom.Client.Resources
 {
-    public class ContactsResource : Resource
+    public sealed class ContactsResource : Resource
     {
+        internal ContactsResource() { }
+
         public Task<string> GetContactsList()
         {
             return Client.GetAsync("contacts/");

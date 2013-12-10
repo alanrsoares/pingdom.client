@@ -6,9 +6,11 @@ namespace Pingdom.Client.Resources
 {
     public sealed class ChecksResource : Resource
     {
-        public async Task<GetCheckListResponse> GetChecksList()
+        internal ChecksResource() { }
+
+        public Task<GetCheckListResponse> GetChecksList()
         {
-            return await Client.GetAsync<GetCheckListResponse>("checks/");
+            return Client.GetAsync<GetCheckListResponse>("checks/");
         }
 
         public Task<GetDetailedCheckInformationResponse> GetDetailedCheckInformation(int checkId)
@@ -36,9 +38,9 @@ namespace Pingdom.Client.Resources
             return Client.DeleteAsync<PingdomResponse>(string.Format("checks/{0}", checkId));
         }
 
-        public async Task<PingdomResponse> DeleteMultipleChecks(IEnumerable<int> checkIds)
+        public Task<PingdomResponse> DeleteMultipleChecks(IEnumerable<int> checkIds)
         {
-            return await Client.DeleteAsync<PingdomResponse>("checks/", new { checkIds = string.Join(",", checkIds) });
+            return Client.DeleteAsync<PingdomResponse>("checks/", new { checkIds = string.Join(",", checkIds) });
         }
     }
 }

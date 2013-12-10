@@ -2,9 +2,7 @@
 {
     public class Pingdom
     {
-        private Pingdom()
-        {
-        }
+        private Pingdom() { }
 
         private static PingdomClient _client;
 

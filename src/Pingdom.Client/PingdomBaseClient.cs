@@ -38,39 +38,39 @@ namespace Pingdom.Client
 
         #region Rest Methods
 
-        public Task<string> GetAsync(string apiMethod)
+        internal Task<string> GetAsync(string apiMethod)
         {
             return _baseClient.GetStringAsync(apiMethod);
         }
 
-        public async Task<T> GetAsync<T>(string apiMethod)
+        internal async Task<T> GetAsync<T>(string apiMethod)
         {
             return await SendAsync<T>(apiMethod, null, HttpMethod.Get);
         }
 
-        public async Task<T> PostAsync<T>(string apiMethod, object data)
+        internal async Task<T> PostAsync<T>(string apiMethod, object data)
         {
             return await SendAsync<T>(apiMethod, data, HttpMethod.Post);
         }
 
-        public Task<T> PutAsync<T>(string apiMethod, object data)
+        internal Task<T> PutAsync<T>(string apiMethod, object data)
         {
             return SendAsync<T>(apiMethod, data, HttpMethod.Put);
         }
 
-        public async Task<T> DeleteAsync<T>(string apiMethod)
+        internal async Task<T> DeleteAsync<T>(string apiMethod)
         {
             return await DeleteAsync<T>(apiMethod, null);
         }
 
-        public async Task<T> DeleteAsync<T>(string apiMethod, object data)
+        internal async Task<T> DeleteAsync<T>(string apiMethod, object data)
         {
             return await SendAsync<T>(apiMethod, data, HttpMethod.Delete);
         }
 
         #endregion
 
-        #region Private Methods
+        #region Shared Methods
 
         private async Task<T> SendAsync<T>(string apiMethod, object data, HttpMethod httpMethod)
         {
