@@ -178,3 +178,6 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+#Local App.Config File (Remote is still there
+*.config
