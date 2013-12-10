@@ -1,12 +1,23 @@
+using System.Text;
+using Pingdom.Client.Contracts;
+
 namespace Pingdom.Client.Resources
 {
     using System.Threading.Tasks;
 
     public sealed class ActionsResource : Resource
     {
-        public Task<string> GetActionsList()
+        /// <summary>
+        /// Returns a list of actions (alerts) that have been generated for your account.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        public Task<GetActionListResponse> GetActionsList(ActionArgs args = null)
         {
-            return Client.GetAsync("actions/");
+            var queryString = args != null ? args.ToQueryString() : string.Empty;
+            var apiMethod = "actions" + queryString;
+
+            return Client.GetAsync<GetActionListResponse>(apiMethod);
         }
     }
 }
