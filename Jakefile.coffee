@@ -3,7 +3,7 @@
 global.options = 
 	git:
 	   tagPrefix: 'client'
-	   commitMessage: 'Generates Nuget for'
+	   commitMessage: 'Generates NuGet for'
 	   allowInBumpCommit: ['CHANGELOG*.md','*.nuspec']
 
 # A solução a ser compilada
