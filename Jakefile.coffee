@@ -1,5 +1,11 @@
 # Esse arquivo define as configurações usadas nos arquivos de build em ./jakelib
 
+global.options = 
+	git:
+	   tagPrefix: 'client'
+	   commitMessage: 'Generates Nuget for'
+	   allowInBumpCommit: ['CHANGELOG*.md','*.nuspec']
+
 # A solução a ser compilada
 global.solutionFile = 'src/Pingdom.Client.sln'
 
