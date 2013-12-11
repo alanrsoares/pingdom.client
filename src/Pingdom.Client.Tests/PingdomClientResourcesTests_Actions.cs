@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using Pingdom.Client.Contracts;
+using PingdomClient.Contracts;
 
-namespace Pingdom.Client.Tests
+namespace PingdomClient.Tests
 {
     public class PingdomClientResourcesTests_Actions
     {

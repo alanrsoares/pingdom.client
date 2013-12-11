@@ -1,23 +1,23 @@
-﻿namespace Pingdom.Client
+﻿namespace PingdomClient
 {
     using Resources;
 
-    public sealed class PingdomClient : PingdomBaseClient
+    public sealed class Client : BaseClient
     {
-        private PingdomClient() { }
+        private Client() { }
 
-        private PingdomClient(PingdomClientConfiguration configuration)
+        private Client(PingdomClientConfiguration configuration)
             : base(configuration)
         { }
 
-        public static PingdomClient CreateNew(PingdomClientConfiguration configuration)
+        public static Client CreateNew(PingdomClientConfiguration configuration)
         {
-            return new PingdomClient(configuration);
+            return new Client(configuration);
         }
 
-        public static PingdomClient CreateNew()
+        public static Client CreateNew()
         {
-            return new PingdomClient();
+            return new Client();
         }
 
         private ActionsResource _actions;

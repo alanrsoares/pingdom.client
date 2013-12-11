@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
-
-namespace Pingdom.Client.Resources
+namespace PingdomClient.Resources
 {
+    using System.Threading.Tasks;
+
     public class ServerTimeResource : Resource
     {
         public Task<int> GetCurrentServerTime()

@@ -1,4 +1,4 @@
-﻿namespace Pingdom.Client.Contracts
+﻿namespace PingdomClient.Contracts
 {
     using System.Collections.Generic;
 

@@ -1,4 +1,4 @@
-﻿namespace Pingdom.Client.Contracts
+namespace PingdomClient.Extensions
 {
     using System.Linq;
 

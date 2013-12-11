@@ -1,4 +1,4 @@
-namespace Pingdom.Client.Resources.Reports
+namespace PingdomClient.Resources.Reports
 {
     public class EmailReport
     {

@@ -1,7 +1,8 @@
-namespace Pingdom.Client.Resources
+namespace PingdomClient.Resources
 {
-    using System.Threading.Tasks;
     using Contracts;
+    using Extensions;
+    using System.Threading.Tasks;
 
     public sealed class ActionsResource : Resource
     {

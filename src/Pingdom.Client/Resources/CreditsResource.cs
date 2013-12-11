@@ -1,4 +1,4 @@
-namespace Pingdom.Client.Resources
+namespace PingdomClient.Resources
 {
     public sealed class CreditsResource : Resource
     {

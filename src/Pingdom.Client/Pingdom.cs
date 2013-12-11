@@ -1,16 +1,16 @@
-﻿namespace Pingdom.Client
+﻿namespace PingdomClient
 {
     public class Pingdom
     {
         private Pingdom() { }
 
-        private static PingdomClient _client;
+        private static Client _client;
 
-        public static PingdomClient Client
+        public static Client Client
         {
             get
             {
-                return _client ?? (_client = PingdomClient.CreateNew());
+                return _client ?? (_client = global::PingdomClient.Client.CreateNew());
             }
         }
     }

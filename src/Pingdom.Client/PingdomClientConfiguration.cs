@@ -1,4 +1,4 @@
-﻿namespace Pingdom.Client
+﻿namespace PingdomClient
 {
     using System.Configuration;
 

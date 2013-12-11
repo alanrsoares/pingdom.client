@@ -1,4 +1,4 @@
-namespace Pingdom.Client.Resources
+namespace PingdomClient.Resources
 {
     using Summaries;
 
@@ -50,8 +50,4 @@ namespace Pingdom.Client.Resources
             }
         }
     }
-}
-
-namespace Pingdom.Client.Resources.Summaries
-{
 }

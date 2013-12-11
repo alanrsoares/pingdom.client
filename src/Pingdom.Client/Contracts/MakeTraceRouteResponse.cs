@@ -1,6 +1,4 @@
-﻿using Pingdom.Client.Resources;
-
-namespace Pingdom.Client.Contracts
+﻿namespace PingdomClient.Contracts
 {
     public class MakeTraceRouteResponse : PingdomResponse
     {

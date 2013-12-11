@@ -1,8 +1,8 @@
-﻿namespace Pingdom.Client
+﻿namespace PingdomClient
 {
     public class Resource
     {
-        protected PingdomBaseClient Client
+        protected BaseClient Client
         {
             get
             {

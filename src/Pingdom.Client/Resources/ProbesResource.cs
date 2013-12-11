@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
-using Pingdom.Client.Contracts;
-
-namespace Pingdom.Client.Resources
+﻿namespace PingdomClient.Resources
 {
+    using Contracts;
+    using System.Threading.Tasks;
+
     public class ProbesResource : Resource
     {
         /// <summary>

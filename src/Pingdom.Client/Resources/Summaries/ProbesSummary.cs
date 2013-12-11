@@ -1,4 +1,4 @@
-namespace Pingdom.Client.Resources.Summaries
+namespace PingdomClient.Resources.Summaries
 {
     public class ProbesSummary
     {

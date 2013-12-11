@@ -1,4 +1,4 @@
-﻿namespace Pingdom.Client
+﻿namespace PingdomClient
 {
     using Newtonsoft.Json;
     using System;
@@ -9,15 +9,15 @@
     using System.Net.Http;
     using System.Threading.Tasks;
 
-    public class PingdomBaseClient
+    public class BaseClient
     {
         private readonly HttpClient _baseClient;
 
-        protected PingdomBaseClient()
+        protected BaseClient()
             : this(new PingdomClientConfiguration())
         { }
 
-        protected PingdomBaseClient(PingdomClientConfiguration configuration)
+        protected BaseClient(PingdomClientConfiguration configuration)
         {
             var credentials = new CredentialCache
                 {

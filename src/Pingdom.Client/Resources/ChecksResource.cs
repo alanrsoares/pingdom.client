@@ -1,8 +1,8 @@
-﻿namespace Pingdom.Client.Resources
+﻿namespace PingdomClient.Resources
 {
+    using Contracts;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Contracts;
 
     public sealed class ChecksResource : Resource
     {

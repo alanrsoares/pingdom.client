@@ -7,7 +7,7 @@
     <ProjectGuid>{2B238B5D-FD72-4DC9-BBB9-EF4565FFF189}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pingdom.Client.Tests</RootNamespace>
+    <RootNamespace>PingdomClient.Tests</RootNamespace>
     <AssemblyName>Pingdom.Client.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -37,7 +37,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PingdomClientResourcesTests_Actions.cs" />
@@ -52,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config.template" />
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

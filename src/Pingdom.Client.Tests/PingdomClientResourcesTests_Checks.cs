@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Pingdom.Client.Tests
+namespace PingdomClient.Tests
 {
     public class PingdomClientResourcesTests_Checks
     {
