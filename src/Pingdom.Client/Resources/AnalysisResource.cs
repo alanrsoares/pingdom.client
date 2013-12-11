@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-
-namespace Pingdom.Client.Resources
+﻿namespace Pingdom.Client.Resources
 {
+    using System.Threading.Tasks;
+
     public class AnalysisResource : Resource
     {
         public Task<string> GetRootCauseAnalysisResultsList(int checkId)

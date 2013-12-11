@@ -179,5 +179,10 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-#Local App.Config File (Remote is still there
+# Local App.Config File (Remote is still there
 src/Pingdom.Client.Tests/App.config
+
+
+# Jake
+test-output/
+node_modules/

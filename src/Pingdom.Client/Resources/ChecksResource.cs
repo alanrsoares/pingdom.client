@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Pingdom.Client.Contracts;
-
-namespace Pingdom.Client.Resources
+﻿namespace Pingdom.Client.Resources
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Contracts;
+
     public sealed class ChecksResource : Resource
     {
         internal ChecksResource() { }

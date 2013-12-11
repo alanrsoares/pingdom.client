@@ -1,13 +1,12 @@
-﻿using System.IO;
-using Newtonsoft.Json;
-
-namespace Pingdom.Client
+﻿namespace Pingdom.Client
 {
+    using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Net;
     using System.Net.Http;
-    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public class PingdomBaseClient

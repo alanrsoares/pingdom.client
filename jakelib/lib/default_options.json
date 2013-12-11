@@ -1,0 +1,14 @@
+{
+    "git": {
+        "tagPrefix": "",
+        "commitMessage":"Gera NuGet do",
+        "allowInBumpCommit": []
+    },
+    "nUnit": {
+    	"outputFile": "test-output/outputDefault.xml"
+    },
+    "nuGet": {
+        "packParameters": ""
+    },
+    "backupOldPackages": "false"
+}
