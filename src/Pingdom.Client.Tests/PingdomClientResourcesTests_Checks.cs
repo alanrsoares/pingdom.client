@@ -61,7 +61,7 @@ namespace PingdomClient.Tests
             var createNewCheckResponse = await Pingdom.Client.Checks.CreateNewCheck(newCheck);
             Assert.IsNotNull(createNewCheckResponse);
             Assert.IsTrue(createNewCheckResponse.HasErrors);
-            Assert.IsNotNullOrEmpty(createNewCheckResponse.Message);
+            Assert.IsNotNullOrEmpty(createNewCheckResponse.ErrorMessage);
             Assert.AreEqual(createNewCheckResponse.Error.StatusCode, 400);
             Assert.AreEqual("Required parameter missing: type", createNewCheckResponse.Error.ErrorMessage);
         }

@@ -2,9 +2,9 @@
 {
     public class PingdomResponse
     {
-        public string Message
+        public string ErrorMessage
         {
-            get { return Error.ErrorMessage; }
+            get { return Error == null ? string.Empty : Error.ErrorMessage; }
         }
 
         public PingdomError Error { get; set; }
