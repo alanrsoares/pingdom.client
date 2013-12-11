@@ -19,6 +19,6 @@
   </metadata>
   <files>
     <file src="bin\Release\Pingdom.Client.dll" target="lib\net45" />
-    <file src="bin\Release\Pingdom.Client.Probe.pdb" target="lib\net45" />
+    <file src="bin\Release\Pingdom.Client.pdb" target="lib\net45" />
   </files>
 </package>
