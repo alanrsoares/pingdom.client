@@ -17,7 +17,7 @@ for testProject in global.testProjects
 
 # Projetos a terem pacotes NuGet gerados
 global.projects =
-    main:
+    default:
         name: 'Pingdom.Client'
         id: 'Pingdom.Client'
 
