@@ -54,6 +54,7 @@
     <Compile Include="Contracts\PingdomResponse.cs" />
     <Compile Include="Contracts\TraceRoute.cs" />
     <Compile Include="Extensions\CustomExtensions.cs" />
+    <Compile Include="Extensions\LowerCasePropertyNamesContractResolver.cs" />
     <Compile Include="Resources\ActionsResource.cs" />
     <Compile Include="Resources\AnalysisResource.cs" />
     <Compile Include="Resources\ContactsResource.cs" />

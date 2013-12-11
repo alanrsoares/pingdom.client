@@ -13,9 +13,24 @@
         public string Name { get; set; }
 
         /// <summary>
-        /// Target host
+        /// Check type
         /// </summary>
-        public string HostName { get; set; }
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Timestamp of last error (if any). Format is UNIX timestamp
+        /// </summary>
+        public int LastErrorTime { get; set; }
+
+        /// <summary>
+        /// Timestamp of last test (if any). Format is UNIX timestamp
+        /// </summary>
+        public int LastTestTime { get; set; }
+
+        /// <summary>
+        /// Response time (in milliseconds) of last test.
+        /// </summary>
+        public int LastResponseTime { get; set; }
 
         /// <summary>
         /// Current status of check
@@ -28,23 +43,13 @@
         public int Resolution { get; set; }
 
         /// <summary>
-        /// Timestamp of last error (if any). Format is UNIX timestamp
+        /// Target host
         /// </summary>
-        public long LastErrorTime { get; set; }
+        public string HostName { get; set; }
 
         /// <summary>
-        /// Response time (in milliseconds) of last test.
+        /// Creating time. Format is UNIX timestamp
         /// </summary>
-        public int LastResponseTime { get; set; }
-
-        /// <summary>
-        /// Timestamp of last test (if any). Format is UNIX timestamp
-        /// </summary>
-        public long LastTestTime { get; set; }
-
-        /// <summary>
-        /// Check type
-        /// </summary>
-        public string Type { get; set; }
+        public int Created { get; set; }
     }
 }
