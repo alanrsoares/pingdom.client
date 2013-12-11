@@ -50,6 +50,7 @@
     <Compile Include="Contracts\GetCheckListResponse.cs" />
     <Compile Include="Contracts\GetDetailedCheckInformationResponse.cs" />
     <Compile Include="Contracts\ActionArgs.cs" />
+    <Compile Include="Contracts\GetRootCauseAnalysisResultsListResponse.cs" />
     <Compile Include="Contracts\PingdomError.cs" />
     <Compile Include="Contracts\PingdomResponse.cs" />
     <Compile Include="Contracts\TraceRoute.cs" />
