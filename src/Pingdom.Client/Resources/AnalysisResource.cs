@@ -12,7 +12,8 @@
 
         public Task<dynamic> GetRawAnalysisResults(int checkId, int analysisId)
         {
-            return Client.GetAsync<dynamic>(string.Format("analysis/{0}/{1}", checkId, analysisId));
+            var apiMethod = string.Format("analysis/{0}/{1}", checkId, analysisId);
+            return Client.GetAsync<dynamic>(apiMethod);
         }
     }
 }

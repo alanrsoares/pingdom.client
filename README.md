@@ -10,6 +10,11 @@
 - Probes
 - TraceRoute
 
+## Installation
+> NuGet package page - http://www.nuget.org/packages/Pingdom.Client/
+
+	PM> Install-Package Pingdom.Client
+
 ## Getting Started
 
 > __Setup credentials and base url__

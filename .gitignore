@@ -186,3 +186,6 @@ src/Pingdom.Client.Tests/App.config
 # Jake
 test-output/
 node_modules/
+
+# nuget packages
+src/packages/
