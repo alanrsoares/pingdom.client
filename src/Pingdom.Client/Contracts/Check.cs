@@ -1,4 +1,6 @@
-﻿namespace PingdomClient.Contracts
+﻿using System.Collections.Generic;
+
+namespace PingdomClient.Contracts
 {
     public class Check
     {
@@ -52,4 +54,20 @@
         /// </summary>
         public int Created { get; set; }
     }
+
+    public class CreateNewCheckResponse : PingdomResponse
+    {
+        public Check Check { get; set; }
+    }
+
+    public class GetDetailedCheckInformationResponse : PingdomResponse
+    {
+        public CheckExtended Check { get; set; }
+    }
+
+    public class GetCheckListResponse : PingdomResponse
+    {
+        public IEnumerable<Check> Checks { get; set; }
+    }
+
 }

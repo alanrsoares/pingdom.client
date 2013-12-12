@@ -1,4 +1,6 @@
-﻿namespace PingdomClient.Contracts
+﻿using System.Collections.Generic;
+
+namespace PingdomClient.Contracts
 {
     public class Probe
     {
@@ -42,4 +44,13 @@
         /// </summary>
         public string CountryISO { get; set; }
     }
+
+    public class GetProbeServerListResponse : PingdomResponse
+    {
+        /// <summary>
+        /// A List of Probes
+        /// </summary>
+        public IEnumerable<Probe> Probes { get; set; }
+    }
+
 }
