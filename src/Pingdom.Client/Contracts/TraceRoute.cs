@@ -17,4 +17,9 @@ namespace PingdomClient.Contracts
         /// </summary>
         public string ProbeDescription { get; set; }
     }
+
+    public class MakeTraceRouteResponse : PingdomResponse
+    {
+        public TraceRoute TraceRoute;
+    }
 }

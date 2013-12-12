@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="PingdomClientResourcesTests_Actions.cs" />
     <Compile Include="PingdomClientResourcesTests_Checks.cs" />
+    <Compile Include="PingdomClientResourcesTests_Contacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
