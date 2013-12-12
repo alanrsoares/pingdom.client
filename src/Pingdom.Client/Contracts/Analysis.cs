@@ -20,7 +20,7 @@ namespace PingdomClient.Contracts
         public int TimeConfirmTest { get; set; }
     }
 
-    public class GetRootCauseAnalysisResultsListResponse
+    public class GetRootCauseAnalysisResultsListResponse : PingdomResponse
     {
         public IEnumerable<Analysis> Analysis { get; set; }
     }
