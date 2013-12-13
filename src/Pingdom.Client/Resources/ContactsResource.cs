@@ -59,10 +59,9 @@ namespace PingdomClient.Resources
         /// </summary>
         /// <param name="contactIds"></param>
         /// <returns></returns>
-        public Task<PingdomResponse> DeleteMultipleContacts(IEnumerable<int> contactIds)
+        public Task<PingdomResponse> DeleteMultipleContacts(object contactIds)
         {
-            var requestBody = string.Format("delcontactids={0}", string.Join(",", contactIds));
-            return Client.DeleteAsync<PingdomResponse>("contacts/", requestBody);
+            return Client.DeleteAsync<PingdomResponse>("contacts/", contactIds);
         }
 
         /// <summary>
