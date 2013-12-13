@@ -51,12 +51,12 @@ namespace PingdomClient.Contracts
         /// <summary>
         /// iPhone token
         /// </summary>
-        public string IphoneTokens { get; set; }
+        public IEnumerable<string> IphoneTokens { get; set; }
 
         /// <summary>
         /// Android token
         /// </summary>
-        public string AndroidTokens { get; set; }
+        public IEnumerable<string> AndroidTokens { get; set; }
 
         /// <summary>
         /// True if contact is paused
