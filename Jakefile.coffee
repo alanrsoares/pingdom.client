@@ -10,7 +10,7 @@ global.options =
 global.solutionFile = 'src/Pingdom.Client.sln'
 
 # Caminho para o arquivo de resultados gerado pelo NUnit
-global.nUnitOutputFile = 'test-output/Pingdom Client.xml'
+global.nUnitOutputFile = 'test-output/Pingdom.Client.xml'
 
 # Projetos de teste
 global.testProjects = [

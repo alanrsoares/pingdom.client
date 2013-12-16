@@ -38,11 +38,6 @@
 
         #region Rest Methods
 
-        internal Task<string> GetAsync(string apiMethod)
-        {
-            return _baseClient.GetStringAsync(apiMethod);
-        }
-
         internal Task<T> GetAsync<T>(string apiMethod)
         {
             return SendAsync<T>(apiMethod, null, HttpMethod.Get);
@@ -84,7 +79,7 @@
 
             var sendAsyncTask = _baseClient.SendAsync(request);
 
-            using (var response = await sendAsyncTask)
+            using (var response = await sendAsyncTask.ConfigureAwait(false))
             using (var content = response.Content)
             using (var stream = await content.ReadAsStreamAsync())
             using (var reader = new StreamReader(stream))
