@@ -77,9 +77,8 @@
                 request.Content = GetFormUrlEncodedContent(data);
             }
 
-            var sendAsyncTask = _baseClient.SendAsync(request);
-
-            using (var response = await sendAsyncTask.ConfigureAwait(false))
+            using (request)
+            using (var response = await _baseClient.SendAsync(request).ConfigureAwait(false))
             using (var content = response.Content)
             using (var stream = await content.ReadAsStreamAsync())
             using (var reader = new StreamReader(stream))
