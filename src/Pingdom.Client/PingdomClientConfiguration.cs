@@ -1,6 +1,7 @@
 ﻿namespace PingdomClient
 {
     using System.Configuration;
+    using System.Linq;
 
     public class PingdomClientConfiguration
     {
@@ -12,17 +13,24 @@
 
         public string Password { get; private set; }
 
+        public string AccountEmail { get; private set; }
+
         public PingdomClientConfiguration()
         {
             AppKey = GetConfigurationKey("AppKey");
             BaseAddress = GetConfigurationKey("BaseUrl");
             UserName = GetConfigurationKey("UserName");
             Password = GetConfigurationKey("Password");
+            AccountEmail = GetConfigurationKey("AccountEmail");
         }
 
         private static string GetConfigurationKey(string key)
         {
-            return ConfigurationManager.AppSettings[string.Format("pingdom:{0}", key)];
+            var fullKey = string.Format("pingdom:{0}", key);
+            if (ConfigurationManager.AppSettings.AllKeys.Contains(fullKey))
+                return ConfigurationManager.AppSettings[fullKey];
+            else
+                return string.Empty;
         }
     }
 }

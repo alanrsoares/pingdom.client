@@ -34,6 +34,10 @@
             };
 
             _baseClient.DefaultRequestHeaders.Add("app-key", configuration.AppKey);
+            if (!string.IsNullOrEmpty(configuration.AccountEmail))
+            {
+                _baseClient.DefaultRequestHeaders.Add("Account-Email", configuration.AccountEmail);
+            }
         }
 
         #region Rest Methods
