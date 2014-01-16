@@ -213,6 +213,22 @@
             });
         };
 
+        task.restore = function (opts, callback) {
+            var opt = extend({}, defaults, opts),
+            args = [];
+            args.push("restore");
+
+            if(opts.solutionFile){
+                args.push(opts.solutionFile);
+            }
+
+            args.push.apply(args);
+            exports.exec(opt._exe, args, function (code) {
+                if (code !== 0) fail('nuget.pack failed')
+                callback ? callback(code) : console.log("\n"); complete();
+            });
+        };
+
         task.setDefaults = function (opts) {
             extend(defaults, opts);
             return defaults;

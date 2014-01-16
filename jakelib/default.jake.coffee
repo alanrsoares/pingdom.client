@@ -14,11 +14,10 @@ documentation = require './lib/documentation'
 
 msbuild = njake.msbuild
 nunit = njake.nunit
+nuget = njake.nuget
 
 documentation.set 'build', 'Compila a solução definida na configuração \'solutionFile\''
-task 'build', async: true, ->
-    if not solutionFile then utils.invalidValue 'solutionFile'
-
+task 'build', ['restore'], async: true, ->
     console.log "\n #{clc.message '--> Compilando '+'\"'+solutionFile+'\"'}"
     msbuild {
         file: solutionFile
@@ -33,7 +32,7 @@ task 'test', ['build', 'test-output'], async: true, ->
 
     console.log "\n #{clc.message "--> Executando testes"}"
     nunit {
-        assemblies: testProjects.map (testProject) -> testProject.assembly 
+        assemblies: testProjects.map (testProject) -> testProject.assembly
         xml: nUnitOutputFile
         }, -> complete(console.log "\n #{clc.sucess '--> Testes executados com sucesso.'}")
 
@@ -68,6 +67,14 @@ task 'update', async: true, ->
     else
         console.log "#{clc.error 'O arquivo package.json não foi encontrado.'}"
         complete()
+
+documentation.set 'restore', 'Restaura todos os pacotes usados pelos projetos da solução'
+task 'restore', async: true, ->
+    if not solutionFile then utils.invalidValue 'solutionFile'
+
+    nuget.restore {
+        solutionFile: solutionFile
+    }
 
 documentation.set 'clean', 'Remove arquivos dos diretórios \'obj\' e \'bin\''
 task 'clean', ->
