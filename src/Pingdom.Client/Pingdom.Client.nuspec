@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Pingdom.Client</id>
-    <version>$version$</version>
+    <version>2.0.8</version>
     <title>Pingdom C# Client</title>
     <authors>https://github.com/alanrsoares</authors>
     <owners>https://github.com/alanrsoares</owners>

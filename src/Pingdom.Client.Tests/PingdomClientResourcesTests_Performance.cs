@@ -19,7 +19,7 @@ namespace PingdomClient.Tests
         [Test]
         public async Task GetSummaryPerformance_WithArgs()
         {
-            var args = new PerformanceArgs()
+            var args = new PerformanceArgs
             {
                 From = DateTime.Now.AddMonths(-3).ToUnixTimestamp(),
                 Resolution = Resolution.Day,
@@ -27,7 +27,7 @@ namespace PingdomClient.Tests
             };
 
             var summaryPerformanceResponse = await Pingdom.Client.Performance.GetSummaryPerformance(953001, args);
-            
+
             Assert.IsNotNull(summaryPerformanceResponse);
             Assert.IsFalse(summaryPerformanceResponse.HasErrors);
         }
