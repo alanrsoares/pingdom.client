@@ -49,6 +49,8 @@
     <Compile Include="Contracts\Contact.cs" />
     <Compile Include="Contracts\ActionArgs.cs" />
     <Compile Include="Contracts\Analysis.cs" />
+    <Compile Include="Contracts\Performance.cs" />
+    <Compile Include="Contracts\PerformanceArgs.cs" />
     <Compile Include="Contracts\PingdomError.cs" />
     <Compile Include="Contracts\PingdomResponse.cs" />
     <Compile Include="Contracts\TraceRoute.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Resources\ChecksResource.cs" />
     <Compile Include="Contracts\Probe.cs" />
     <Compile Include="Resources\CreditsResource.cs" />
+    <Compile Include="Resources\PerformanceResource.cs" />
     <Compile Include="Resources\ProbesResource.cs" />
     <Compile Include="Resources\ReferenceResource.cs" />
     <Compile Include="Resources\ReportsResource.cs" />

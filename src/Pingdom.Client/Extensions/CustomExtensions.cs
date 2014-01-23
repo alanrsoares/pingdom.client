@@ -1,3 +1,5 @@
+using System;
+
 namespace PingdomClient.Extensions
 {
     using System.Linq;
@@ -14,6 +16,11 @@ namespace PingdomClient.Extensions
                 .Select(p => string.Format("{0}={1}", p.Key.ToLower(), p.Value.ToString()));
 
             return string.Format("?{0}", string.Join("&", queryString));
+        }
+
+        public static long ToUnixTimestamp(this DateTime dateTime)
+        {
+            return (long)(dateTime - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds;
         }
     }
 }

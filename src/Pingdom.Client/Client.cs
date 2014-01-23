@@ -34,6 +34,7 @@
         private SettingsResource _settings;
         private SummaryResource _summary;
         private SingleResource _single;
+        private PerformanceResource _performance;
 
         public ActionsResource Actions
         {
@@ -81,6 +82,11 @@
             {
                 return _probes ?? (_probes = new ProbesResource());
             }
+        }
+
+        public PerformanceResource Performance
+        {
+            get { return _performance ?? (_performance = new PerformanceResource()); }
         }
 
         public ReferenceResource Reference
