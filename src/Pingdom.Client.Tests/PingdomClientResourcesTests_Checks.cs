@@ -16,7 +16,7 @@ namespace PingdomClient.Tests
         [Test]
         public async Task GetDetailedCheckInformationTest()
         {
-            var result = await Pingdom.Client.Checks.GetDetailedCheckInformation(797046);
+            var result = await Pingdom.Client.Checks.GetDetailedCheckInformation(837218);
             Assert.IsTrue(result.Check.ContactIds.Any());
         }
 
