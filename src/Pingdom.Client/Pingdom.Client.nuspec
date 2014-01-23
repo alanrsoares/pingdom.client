@@ -7,7 +7,7 @@
     <authors>https://github.com/alanrsoares</authors>
     <owners>https://github.com/alanrsoares</owners>
     <projectUrl>https://github.com/alanrsoares/pingdom.client</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>Added summary.Performance to supported operations
     <description>C# TypeSafe Client wrapper for Pingdom APIs v2.0</description>
     <tags>pingdom client  typesafe c# restful</tags>
     <dependencies>
@@ -15,7 +15,7 @@
     </dependencies>
     <frameworkAssemblies>      
     </frameworkAssemblies>
-    <releaseNotes>First NuGet Release</releaseNotes>
+    <releaseNotes>Added summary.Performance to supported operations</releaseNotes>
   </metadata>
   <files>
     <file src="bin\Release\Pingdom.Client.dll" target="lib\net45" />

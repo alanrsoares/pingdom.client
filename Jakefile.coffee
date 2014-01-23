@@ -13,9 +13,10 @@ global.solutionFile = 'src/Pingdom.Client.sln'
 global.nUnitOutputFile = 'test-output/Pingdom.Client.xml'
 
 # Projetos de teste
-global.testProjects = [
-    {name: 'Pingdom.Client.Tests'}
-]
+global.testProjects = []
+#[
+# {name: 'Pingdom.Client.Tests'}
+#]
 
 # Define caminho dos assemblies dos projetos de testes
 for testProject in global.testProjects
