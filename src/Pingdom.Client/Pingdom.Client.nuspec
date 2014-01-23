@@ -7,7 +7,8 @@
     <authors>https://github.com/alanrsoares</authors>
     <owners>https://github.com/alanrsoares</owners>
     <projectUrl>https://github.com/alanrsoares/pingdom.client</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>Added summary.Performance to supported operations
+    <iconUrl>http://fs02.androidpit.info/ali/05/72/12210572-1387007693349-144x144.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>C# TypeSafe Client wrapper for Pingdom APIs v2.0</description>
     <tags>pingdom client  typesafe c# restful</tags>
     <dependencies>
