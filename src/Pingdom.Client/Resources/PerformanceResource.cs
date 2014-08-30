@@ -11,7 +11,7 @@ namespace PingdomClient.Resources
         {
 
             var queryString = args != null ? args.ToQueryString() : string.Empty;
-            var apiMethod = string.Format("summary.performance/{0}" + queryString, checkId);
+            var apiMethod = string.Format("summary.performance/{0}" + queryString.ToLower(), checkId);
             var response = await Client.GetAsync<GetSummaryPerformanceResponse>(apiMethod);
 
             return response;
