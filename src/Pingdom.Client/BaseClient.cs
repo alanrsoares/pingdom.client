@@ -1,4 +1,6 @@
-﻿namespace PingdomClient
+﻿using System.Text;
+
+namespace PingdomClient
 {
     using Newtonsoft.Json;
     using System;
@@ -77,7 +79,6 @@
 
             if (data != null)
             {
-                request.Headers.Add("Context-Type", "application/x-www-form-urlencoded");
                 request.Content = GetFormUrlEncodedContent(data);
             }
 
@@ -92,13 +93,17 @@
             }
         }
 
-        private static FormUrlEncodedContent GetFormUrlEncodedContent(object anonymousObject)
+        private static StringContent GetFormUrlEncodedContent(object anonymousObject)
         {
             var properties = from propertyInfo in anonymousObject.GetType().GetProperties()
                              where propertyInfo.GetValue(anonymousObject, null) != null
-                             select new KeyValuePair<string, string>(propertyInfo.Name, WebUtility.UrlEncode(propertyInfo.GetValue(anonymousObject, null).ToString()));
+                             select new KeyValuePair<string, string>(WebUtility.UrlEncode(propertyInfo.Name), WebUtility.UrlEncode(propertyInfo.GetValue(anonymousObject, null).ToString()));
+            var dict = properties.ToDictionary((k) => k.Key, (k) => k.Value);
+            var postData = string.Join("&",
+                dict.Select(kvp =>
+                    string.Format("{0}={1}", kvp.Key, kvp.Value)));
 
-            return new FormUrlEncodedContent(properties);
+            return new StringContent(postData, Encoding.UTF8, "application/x-www-form-urlencoded");
         }
 
         #endregion
