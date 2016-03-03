@@ -1,4 +1,6 @@
-﻿namespace PingdomClient
+﻿using System.Net.Http.Headers;
+
+namespace PingdomClient
 {
     using Newtonsoft.Json;
     using System;
@@ -77,8 +79,8 @@
 
             if (data != null)
             {
-                request.Headers.Add("Context-Type", "application/x-www-form-urlencoded");
                 request.Content = GetFormUrlEncodedContent(data);
+                request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
             }
 
             using (request)
@@ -97,6 +99,25 @@
             var properties = from propertyInfo in anonymousObject.GetType().GetProperties()
                              where propertyInfo.GetValue(anonymousObject, null) != null
                              select new KeyValuePair<string, string>(propertyInfo.Name, WebUtility.UrlEncode(propertyInfo.GetValue(anonymousObject, null).ToString()));
+
+            var dict = properties.ToDictionary((k) => k.Key, (k) => k.Value);
+
+            // HACK HACK
+            // "url" component of the POST payload to /api/{version}/checks gets kicked back when it
+            // is UrlEncoded as per pingdom docs. We need to special case this in order to specify a custom url
+            // LAME.
+            //
+            // "error": {
+            //     "statuscode": 400,
+            //     "statusdesc": "Bad Request",
+            //     "errormessage": "Invalid parameter value => url"
+            // }
+            //
+            // NOTE: This does not happen when form data is appended to querystring, value is properly decoded there.
+            if (dict.ContainsKey("url"))
+            {
+                dict["url"] = WebUtility.UrlDecode(dict["url"]);
+            }
 
             return new FormUrlEncodedContent(properties);
         }
