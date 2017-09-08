@@ -8,7 +8,7 @@ namespace PingdomClient.Extensions
         /// Initializes a new instance of the LowerCasePropertyNamesContractResolver class.
         /// </summary>
         public LowerCasePropertyNamesContractResolver()
-            : base(true)
+            : base()
         {
         }
 
