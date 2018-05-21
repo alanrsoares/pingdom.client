@@ -21,6 +21,8 @@ namespace PingdomClient
 
         protected BaseClient(PingdomClientConfiguration configuration)
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             var credentials = new CredentialCache
                 {
                     {
