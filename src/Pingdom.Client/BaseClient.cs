@@ -21,19 +21,13 @@ namespace PingdomClient
 
         protected BaseClient(PingdomClientConfiguration configuration)
         {
-            var credentials = new CredentialCache
-                {
-                    {
-                        new Uri(configuration.BaseAddress), "basic", new NetworkCredential(configuration.UserName, configuration.Password)
-                    }
-                };
-
-            var requestHandler = new WebRequestHandler { Credentials = credentials };
-
-            _baseClient = new HttpClient(requestHandler)
+            _baseClient = new HttpClient()
             {
                 BaseAddress = new Uri(configuration.BaseAddress)
             };
+            
+            _baseClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+                Convert.ToBase64String(Encoding.ASCII.GetBytes($"{configuration.UserName}:{configuration.Password}")));
 
             _baseClient.DefaultRequestHeaders.Add("app-key", configuration.AppKey);
             if (!string.IsNullOrEmpty(configuration.AccountEmail))
